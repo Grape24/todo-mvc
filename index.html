@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300&display=swap" rel="stylesheet">
+</head>
+<body onload="init()">
+    <h1>MVC</h1>
+    
+    <div class="filter-container">
+        Filter By: 
+        <select onchange="onSetFilter(this.value)">
+                <option>All</option>
+                <option>Active</option>
+                <option>Done</option>
+        </select>
+            Sort By: 
+        <select onchange="onSetSort(this.value)">
+                <option>Time added</option>
+                <option>Priority</option>
+                <option>Alphabetical order</option>
+        </select>
+    </div>
+    <div class="input-container">
+        <input type="text" placeholder="What needs to be done?"/>
+            <span class="validation"></span>
+            <div class="priority-container">
+                Pick priority:
+                <select>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                </select>
+            </div>
+        <button onclick="onAddTodo()">Add</button>
+    </div>
+        
+        <ul class="todo-list"></ul>
+        <p class="stat">
+            Total todos: 
+            <span class="total-count"></span>
+            Active:
+            <span class="active-count"></span>
+        </p>
+
+        
+        <script src="js/todo-service.js"></script>
+        <script src="js/todo-controller.js"></script>
+</body>
+</html>
